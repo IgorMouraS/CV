@@ -9,9 +9,16 @@ header { text-align: center; margin-bottom: 11px; }
 h1 { font-size: 22pt; letter-spacing: 1.6px; margin: 0 0 2px;
   font-weight: 700; text-transform: uppercase; }
 .role { font-size: 12pt; color: #333; margin-bottom: 4px; font-weight: 500; }
-.contact { font-size: 8.9pt; color: #444; }
+.contact { font-size: 8.9pt; color: #444; display: flex; flex-wrap: wrap;
+  justify-content: center; align-items: center; gap: 3px 14px; }
+.contact i.brk { flex: 0 0 100%; height: 0; }
+.contact span { display: inline-flex; align-items: center; gap: 4px; white-space: nowrap; }
+.contact svg.brand { fill: currentColor; stroke: none; }
+.contact svg { width: 10px; height: 10px; flex: 0 0 auto; fill: none;
+  stroke: #0006a9; stroke-width: 1.9; stroke-linecap: round;
+  stroke-linejoin: round; opacity: .75; }
 .contact a { color: #444; text-decoration: none; }
-h2 { color: #005bf9; font-size: 10pt; text-transform: uppercase; letter-spacing: 1.1px;
+h2 { color: #0006a9; font-size: 10pt; text-transform: uppercase; letter-spacing: 1.1px;
   border-bottom: 1px solid #bbb; padding-bottom: 2px; margin: 10px 0 4px;
   font-weight: 700; }
 h3 { font-size: 10.3pt; margin: 8px 0 1px; font-weight: 700; overflow: hidden; }
@@ -31,7 +38,15 @@ strong { font-weight: 700; }
 <header>
 <h1>$name$</h1>
 <div class="role">$title$</div>
-<div class="contact">$location$ &thinsp;|&thinsp; $email$ &thinsp;|&thinsp; $phone$ &thinsp;|&thinsp; $linkedin$ &thinsp;|&thinsp; $github$</div>
+<div class="contact"><span><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>$location$</span><span><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2.5 7 12 14l9.5-7"/></svg>$email$</span><span><svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M10.5 18.5h3"/></svg>$phone$</span><i class="brk"></i><span>
+  <!-- ICONE LINKEDIN: para usar o logo oficial (brand.linkedin.com),
+       substitua a linha abaixo por:  <svg class="brand" viewBox="0 0 24 24">COLE-OS-PATHS-AQUI</svg>  -->
+  <svg viewBox="0 0 24 24"><path d="M9.5 14.5 14.5 9.5"/><path d="M12.5 6.5 14 5a4.2 4.2 0 0 1 6 6l-1.5 1.5"/><path d="M11.5 17.5 10 19a4.2 4.2 0 0 1-6-6l1.5-1.5"/></svg>
+  $linkedin$</span><span>
+  <!-- ICONE GITHUB: para usar o logo oficial (github.com/logos),
+       substitua a linha abaixo por:  <svg class="brand" viewBox="0 0 24 24">COLE-OS-PATHS-AQUI</svg>  -->
+  <svg viewBox="0 0 24 24"><path d="M8.5 6 3 12l5.5 6"/><path d="M15.5 6 21 12l-5.5 6"/></svg>
+  $github$</span></div>
 </header>
 $body$
 </body></html>
