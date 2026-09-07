@@ -12,10 +12,6 @@ github: github.com/IgorMouraS
 
 Full Stack Software Engineer with 3+ years on a multi-tenant B2B SaaS, backend-leaning: NestJS, Node.js, TypeScript, PostgreSQL. Sole engineer accountable for production stability.
 
-## Skills
-
-Node.js, TypeScript, NestJS, PostgreSQL, React, Astro, Cloudflare, LLM integration, AI agents, agent orchestration
-
 ## Experience
 
 ### Full Stack Software Engineer — Widde `São Paulo, Brazil (Hybrid) · Jan 2025 – Present`
@@ -53,6 +49,10 @@ Node.js, TypeScript, NestJS, PostgreSQL, React, Astro, Cloudflare, LLM integrati
 
 - **RocketSeat** — Node.js, React, Full Stack and n8n Automation training (2025–2026)
 - **Alura** — 116h across Back-end, Front-end, DevOps and UX & Design (2022–2023)
+
+## Skills
+
+Node.js, TypeScript, NestJS, PostgreSQL, React, Astro, Cloudflare, LLM integration, AI agents, agent orchestration 
 
 ## Languages
 
