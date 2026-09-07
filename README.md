@@ -16,3 +16,9 @@ To run build.sh, run the command to install pandoc:
 Then, to convert, run:
 
 > ./build.sh
+
+---
+
+Result:
+
+[Resume preview](./cv.pdf)
