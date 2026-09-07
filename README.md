@@ -1,24 +1,44 @@
 # Resume
 
-## Build your Resume in Markdown + HTML, then convert it to PDF
+## Build your resume in Markdown + HTML, then convert it to PDF
 
-I don't use PowerPoint, Canva, or Word to edit my resume. Beyond the bad experiences, they force you to re-adjust the alignment of every single text box every time you change a line.
+I don't use PowerPoint, Canva, or Word to edit my resume. Aside from the bad experience, they make you re-align every single text box every time you change one line.
 
-That's why I built mine in Markdown. The content lives in a .md file, the styling lives in an HTML template, and a small script turns both into a PDF using the Chrome you already have installed.
+So I built mine in Markdown. The content lives in a `.md` file, the styling lives in an HTML template, and a small script turns both into a PDF using the Chrome you already have installed.
 
-I put it all in this repository — clone it and you get the same result as mine:
+## Two layouts, one content file
 
----
-To run build.sh, run the command to install pandoc:
+Both scripts read the same `cv.md` — you write once and pick the layout when you export.
 
-> brew install pandoc 
+| Script | Output | Layout |
+| --- | --- | --- |
+| `./build.sh` | `resume/cv.pdf` | Single column |
+| `./build-2col.sh` | `resume/cv-2col.pdf` | Sidebar (contact, skills, education) + main column (summary, experience, projects) |
 
-Then, to convert, run:
+## How to run
 
-> ./build.sh
+Install the only dependency:
 
----
+```bash
+brew install pandoc
+```
 
-Result:
+Then run whichever layout you want:
 
-[Resume preview](./cv.pdf)
+```bash
+./build.sh        # -> resume/cv.pdf
+./build-2col.sh   # -> resume/cv-2col.pdf
+```
+
+## Files
+
+```
+cv.md                your content
+template.html        single-column styling
+template-2col.html   two-column styling
+filter-2col.lua      splits sections between the columns
+```
+
+## Result
+
+[Single column](./resume/cv.pdf) · [Two columns](./resume/cv-2col.pdf)
