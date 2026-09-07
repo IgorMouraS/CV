@@ -52,7 +52,7 @@ Full Stack Software Engineer with 3+ years on a multi-tenant B2B SaaS, backend-l
 
 ## Skills
 
-Node.js, TypeScript, NestJS, PostgreSQL, React, Astro, Cloudflare, LLM integration, AI agents, agent orchestration 
+Node.js • TypeScript • NestJS • PostgreSQL • React • Astro • Cloudflare • LLM integration • AI agents • agent orchestration 
 
 ## Languages
 

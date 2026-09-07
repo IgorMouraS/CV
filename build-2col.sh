@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
-# Layout de uma coluna.  cv.md -> resume/cv.pdf
+# Layout de duas colunas.  cv.md -> resume/cv-2col.pdf
 # Requer apenas pandoc (brew install pandoc). O PDF sai do Chrome instalado.
 set -e
 
 OUT_DIR="resume"
-OUT_PDF="$OUT_DIR/cv.pdf"
-TEMPLATE="template.html"
+OUT_PDF="$OUT_DIR/cv-2col.pdf"
+TEMPLATE="template-2col.html"
 
 CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 [ -x "$CHROME" ] || CHROME="/Applications/Chromium.app/Contents/MacOS/Chromium"
@@ -18,10 +18,10 @@ PROFILE="$(mktemp -d)"
 trap 'rm -rf "$TMP" "$PROFILE"' EXIT
 
 mkdir -p "$OUT_DIR"
-rm -f cv.html                      # limpa HTML de versoes antigas do script
+rm -f cv-2col.html                      # limpa HTML de versoes antigas do script
 
 echo "1/2 pandoc"
-pandoc cv.md -f markdown -t html5 --template="$TEMPLATE" -o "$TMP/cv.html"
+pandoc cv.md -f markdown -t html5 --template="$TEMPLATE" --lua-filter=filter-2col.lua -o "$TMP/cv.html"
 
 echo "2/2 chrome"
 rm -f "$OUT_PDF"

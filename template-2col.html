@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>$name$ — CV</title>
+<style>
+/* ---------- pagina ---------- */
+@page { size: A4; margin: 13mm 14mm; }
+* { box-sizing: border-box; }
+:root {
+  --accent: #2f6f62;      /* cor dos titulos de secao e da barra do nome */
+  --ink:    #1a1a1a;
+  --muted:  #555;
+  --rule:   #c9c9c9;
+  --side-w: 1fr;          /* largura da coluna estreita  */
+  --main-w: 2.1fr;        /* largura da coluna principal */
+}
+body { font-family: Helvetica, Arial, "Liberation Sans", sans-serif;
+  font-size: 9.5pt; line-height: 1.33; color: var(--ink); margin: 0; }
+
+/* ---------- cabecalho ---------- */
+header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+header .bar { width: 26px; height: 26px; background: var(--accent); flex: 0 0 auto; }
+h1 { font-size: 20pt; margin: 0; font-weight: 700; letter-spacing: .3px; }
+.role { font-size: 10.5pt; color: var(--muted); margin-top: 1px; }
+
+/* ---------- grade de duas colunas ----------
+   No HTML a coluna principal vem PRIMEIRO (bom para extracao de texto);
+   o grid a joga visualmente para a direita. Para inverter os lados,
+   troque os valores de grid-column abaixo.                            */
+body > .col-main, body > .col-side { min-width: 0; }
+body { display: grid; grid-template-columns: var(--side-w) var(--main-w);
+  column-gap: 15px; align-items: start; }
+header { grid-column: 1 / -1; }
+.col-main { grid-column: 2; }
+.col-side { grid-column: 1; grid-row: 2; border-right: 1px solid var(--rule);
+  padding-right: 14px; }
+
+/* ---------- secoes ---------- */
+h2 { font-size: 9pt; text-transform: uppercase; letter-spacing: 1.1px;
+  color: var(--accent); border-bottom: 1px solid var(--rule);
+  padding-bottom: 2px; margin: 12px 0 5px; font-weight: 700; }
+.col-main > h2:first-child, .col-side > h2:first-child { margin-top: 0; }
+h3 { font-size: 10pt; margin: 9px 0 1px; font-weight: 700; overflow: hidden; }
+h3 code { float: right; font-family: inherit; font-size: 8.6pt; color: var(--muted);
+  font-weight: 400; background: none; padding-top: 2px; }
+p { margin: 3px 0; }
+p code, li code { font-family: inherit; font-size: 8.8pt; color: var(--muted); background: none; }
+em { color: #3a3a3a; font-weight: normal; font-style: italic; }
+ul { margin: 4px 0 0; padding-left: 14px; }
+li { margin-bottom: 3px; }
+
+/* ---------- contato (coluna estreita) ---------- */
+ul.contact { list-style: none; padding: 0; margin: 2px 0 0; font-size: 8.8pt; }
+ul.contact li { display: flex; align-items: flex-start; gap: 5px; margin-bottom: 3px; }
+ul.contact svg { width: 10px; height: 10px; margin-top: 2px; flex: 0 0 auto;
+  fill: none; stroke: currentColor; stroke-width: 1.9;
+  stroke-linecap: round; stroke-linejoin: round; opacity: .75; }
+ul.contact span { word-break: break-word; }
+</style></head>
+<body>
+<header>
+  <div class="bar"></div>
+  <div><h1>$name$</h1><div class="role">$title$</div></div>
+</header>
+$body$
+</body></html>
