@@ -21,6 +21,11 @@ Install the only dependency:
 
 ```bash
 brew install pandoc
+
+**on Windows use**
+open the terminal using adm mode
+
+choco install pandoc
 ```
 
 Then run whichever layout you want:
